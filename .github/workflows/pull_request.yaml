@@ -1,0 +1,17 @@
+name: Pull Request
+on:
+  pull_request:
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: asdf-vm/actions/install@v1
+      - run: go mod verify
+      - run: go mod tidy
+      - name: go fmt
+        run: test -z $(go fmt)
+      - run: go test -v

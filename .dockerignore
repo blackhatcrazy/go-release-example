@@ -1,0 +1,6 @@
+.gitignore
+.goreleaser.yaml
+.tool-versions
+Makefile
+.git/
+.github/
