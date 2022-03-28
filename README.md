@@ -13,7 +13,8 @@ message](https://www.conventionalcommits.org/en/v1.0.0/).
 
 goreleaser creates the binaries and Docker images. The binaries are amended to the GitHub Release
 and the Docker images are sent to the specified image repo
-(in this case [GitHub Container Registry](https://github.com/features/packages)).
+(in this case [GitHub Container Registry](https://github.com/features/packages)
+and [Docker Hub](https://hub.docker.com/)).
 
 ## Why both?
 
