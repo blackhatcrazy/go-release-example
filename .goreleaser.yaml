@@ -13,7 +13,6 @@ builds:
     goos:
       - linux
       - darwin
-      - windows
     goarch:
       - amd64
       - arm64
@@ -23,23 +22,3 @@ builds:
 universal_binaries:
   - id: go-release-example
     replace: false
-dockers:
-  - image_templates:
-      - "ahoward1024/{{ .ProjectName }}:{{ .Version }}"
-      - "ahoward1024/{{ .ProjectName }}:{{ .Major }}"
-      - "ahoward1024/{{ .ProjectName }}:{{ .Major }}.{{ .Minor }}"
-      - "ahoward1024/{{ .ProjectName }}:latest"
-      - "ghcr.io/ahoward1024/{{ .ProjectName }}:{{ .Major }}"
-      - "ghcr.io/ahoward1024/{{ .ProjectName }}:{{ .Major }}.{{ .Minor }}"
-      - "ghcr.io/ahoward1024/{{ .ProjectName }}:{{ .Version }}"
-      - "ghcr.io/ahoward1024/{{ .ProjectName }}:latest"
-    dockerfile: Dockerfile
-    build_flag_templates:
-      - --label=org.opencontainers.image.title={{ .ProjectName }}
-      - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/ahoward1024/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/ahoward1024/{{ .ProjectName }}
-      - --label=org.opencontainers.image.version={{ .Version }}
-      - --label=org.opencontainers.image.created={{ .Date }}
-      - --label=org.opencontainers.image.revision={{ .FullCommit }}
-      - --label=org.opencontainers.image.licenses=MIT
