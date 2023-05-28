@@ -68,3 +68,5 @@ release of `v1.0.0`.
   created in pull requests to show the version being bumped.
 
 add feature 1
+
+add feature 2
